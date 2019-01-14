@@ -1,0 +1,62 @@
+{
+  name: "statink/imgstatink",
+  description: "img.stat.ink",
+  homepage: "https://stat.ink/",
+  type: "project",
+  license: "MIT",
+  support: {
+    issues: "https://github.com/statink/img.stat.ink/issues",
+    source: "https://github.com/statink/img.stat.ink",
+  },
+  "minimum-stability": "stable",
+  require: {
+    php: "7.3.*",
+    "ext-gd": "*",
+
+    "yiisoft/yii2": "~2.0.15",
+  },
+  "require-dev": {
+    "yiisoft/yii2-debug": "~2.0.0",
+    "yiisoft/yii2-gii": "~2.0.0",
+  },
+  config: {
+    platform: {
+      php: "7.3.1",
+    },
+    "process-timeout": 1800,
+    "fxp-asset": {
+      enabled: false,
+    },
+  },
+  scripts: {
+    "post-install-cmd": [
+      "yii\\composer\\Installer::postInstall",
+    ],
+    "post-create-project-cmd": [
+      "yii\\composer\\Installer::postCreateProject",
+      "yii\\composer\\Installer::postInstall",
+    ],
+  },
+  extra: {
+    "yii\\composer\\Installer::postCreateProject": {
+      setPermission: [
+        {
+          "runtime": "0777",
+          "web/assets": "0777",
+          "yii": "0755",
+        },
+      ],
+    },
+    "yii\\composer\\Installer::postInstall": {
+      "generateCookieValidationKey": [
+        "config/web.php",
+      ],
+    },
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+  ],
+}
