@@ -13,6 +13,7 @@ $config = [
     'components' => [
         'cache' => include(__DIR__ . '/components/cache.php'),
         'db' => include(__DIR__ . '/components/db.php'),
+        'imgS3' => include(__DIR__ . '/components/img-s3.php'),
         'log' => include(__DIR__ . '/components/log.php'),
     ],
     'params' => include(__DIR__ . '/params.php'),

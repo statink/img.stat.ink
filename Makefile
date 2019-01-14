@@ -1,4 +1,6 @@
-CONFIGS := config/secrets/cookie.php
+CONFIGS := \
+	config/secrets/cookie.php \
+	config/secrets/img-s3.php
 
 .PHONY: all
 all: init
@@ -20,3 +22,11 @@ composer.phar:
 
 config/secrets/cookie.php:
 	./bin/create_cookie_secret > $@
+
+config/secrets/img-s3.php:
+	echo '<?php' > $@
+	echo 'declare(strict_types=1);' >> $@
+	echo '' >> $@
+	echo 'return [' >> $@
+	echo '];' >> $@
+

@@ -13,6 +13,7 @@
     php: "7.3.*",
     "ext-gd": "*",
 
+    "tpyo/amazon-s3-php-class": "^0.5.1",
     "yiisoft/yii2": "~2.0.15",
   },
   "require-dev": {

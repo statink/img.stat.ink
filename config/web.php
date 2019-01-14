@@ -15,6 +15,7 @@ $config = [
         'cache' => include(__DIR__ . '/components/cache.php'),
         'db' => include(__DIR__ . '/components/db.php'),
         'errorHandler' => include(__DIR__ . '/components/error-handler.php'),
+        'imgS3' => include(__DIR__ . '/components/img-s3.php'),
         'log' => include(__DIR__ . '/components/log.php'),
         'request' => include(__DIR__ . '/components/request.php'),
         'urlManager' => include(__DIR__ . '/components/url-manager.php'),
